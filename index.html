@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>🏀 NBA Tutorial for Eunice</title>
+<style>
+:root{--or:#F7941D;--bl:#1D428A;--dk:#0d0d0d;--cd:#1a1a2e;--bd:#2a2a4a;--tx:#e8e8e8;--mt:#aaaaaa;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dk);color:var(--tx);line-height:1.75;}
+header{background:linear-gradient(135deg,var(--bl) 0%,#0a0a1a 55%,#1a0505 100%);text-align:center;padding:64px 20px 52px;border-bottom:4px solid var(--or);position:relative;overflow:hidden;}
+header::before{content:'🏀';font-size:220px;position:absolute;opacity:.04;top:-40px;right:-30px;pointer-events:none;}
+header h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:900;color:#fff;letter-spacing:-1px;}
+header h1 span{color:var(--or);}
+header .sub{margin-top:14px;font-size:1.05rem;color:#ccc;max-width:580px;margin-inline:auto;}
+header .quote{margin-top:18px;font-style:italic;color:var(--or);font-size:.92rem;}
+nav{position:sticky;top:0;z-index:999;background:rgba(10,10,10,.96);border-bottom:2px solid var(--or);display:flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:9px 16px;backdrop-filter:blur(10px);}
+nav a{color:var(--mt);text-decoration:none;padding:6px 14px;border-radius:20px;font-size:.8rem;font-weight:600;transition:all .2s;white-space:nowrap;}
+nav a:hover{color:#0d0d0d;background:var(--or);}
+main{max-width:900px;margin:0 auto;padding:0 20px 100px;}
+section{margin-top:64px;scroll-margin-top:72px;}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-bottom:14px;border-bottom:2px solid var(--or);}
+.badge{background:var(--or);color:#0d0d0d;font-weight:900;font-size:.72rem;padding:4px 10px;border-radius:20px;white-space:nowrap;}
+.sh h2{font-size:clamp(1.3rem,3vw,1.85rem);font-weight:800;color:#fff;}
+.intro{background:rgba(29,66,138,.18);border-left:4px solid var(--bl);padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:28px;font-style:italic;color:#ccc;}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:24px;margin-bottom:20px;transition:border-color .2s,transform .2s;}
+.card:hover{border-color:var(--or);transform:translateY(-2px);}
+.card h3{font-size:1.12rem;font-weight:800;color:var(--or);margin-bottom:3px;}
+.meta{font-size:.78rem;color:var(--mt);margin-bottom:12px;}
+.card ul{padding-left:20px;}
+.card ul li{margin-bottom:6px;}
+.card ul li strong,.card p strong{color:#fff;}
+.card p{color:var(--tx);}
+.tp{background:rgba(247,148,29,.09);border:1px solid rgba(247,148,29,.35);border-radius:8px;padding:11px 15px;margin-top:13px;font-style:italic;color:#f0c070;font-size:.9rem;}
+.tp::before{content:'💬 ';}
+.links{margin-top:13px;display:flex;flex-wrap:wrap;gap:7px;}
+.links a{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);color:#7eb8f7;text-decoration:none;padding:5px 12px;border-radius:20px;font-size:.78rem;transition:all .2s;}
+.links a:hover{background:var(--bl);border-color:var(--bl);color:#fff;}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem;}
+thead tr{background:var(--bl);}
+thead th{padding:10px 14px;text-align:left;color:#fff;font-weight:700;}
+tbody tr{border-bottom:1px solid var(--bd);}
+tbody tr:hover{background:rgba(255,255,255,.025);}
+tbody td{padding:9px 14px;}
+tbody td strong{color:#fff;}
+.flow{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0;align-items:center;justify-content:center;}
+.fs{background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:12px 16px;text-align:center;flex:1;min-width:110px;}
+.fs .mo{font-size:.68rem;color:var(--or);font-weight:700;text-transform:uppercase;}
+.fs .lb{font-size:.85rem;font-weight:600;margin-top:4px;}
+.arr{color:var(--or);font-size:1.3rem;}
+.rrow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd);}
+.rn{width:175px;font-weight:600;font-size:.85rem;flex-shrink:0;}
+.rbw{flex:1;background:rgba(255,255,255,.05);border-radius:4px;height:17px;overflow:hidden;}
+.rb{height:100%;background:linear-gradient(90deg,var(--or),#f7c06d);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;font-size:.7rem;font-weight:700;color:#000;}
+.cs{background:#0a1628;border:2px solid var(--bl);border-radius:12px;padding:20px 24px;font-family:'Courier New',monospace;font-size:.83rem;line-height:2;color:#a8d8ea;}
+.cs .lbl{color:var(--or);font-weight:700;}
+.congrats{text-align:center;padding:52px 20px;background:linear-gradient(135deg,rgba(29,66,138,.28),rgba(247,148,29,.08));border:2px solid var(--or);border-radius:16px;margin-top:30px;}
+.congrats h2{font-size:2rem;color:var(--or);}
+.congrats .sub2{margin-top:10px;color:#ccc;max-width:480px;margin-inline:auto;}
+.ck{list-style:none;text-align:left;display:inline-block;margin-top:20px;}
+.ck li{padding:5px 0;}
+.ck li::before{content:'✅ ';}
+hr{border:none;border-top:1px solid var(--bd);margin:28px 0;}
+@media(max-width:600px){nav a{font-size:.7rem;padding:5px 9px}.rn{width:110px;font-size:.75rem}}
+</style>
+</head>
+<body>
+<header>
+  <h1>🏀 NBA Tutorial for <span>Eunice</span></h1>
+  <p class="sub">From zero to conversation-ready — step by step. No prior knowledge needed. 😄</p>
+  <p class="quote">"Basketball is not just a sport, it's a culture." — Kobe Bryant</p>
+</header>
+<nav>
+  <a href="#basics">1️⃣ Basics</a>
+  <a href="#stars">2️⃣ Stars Today</a>
+  <a href="#legends">3️⃣ Legends</a>
+  <a href="#moments">4️⃣ Great Moments</a>
+  <a href="#noring">5️⃣ No Ring Heroes</a>
+  <a href="#watch">6️⃣ Watch a Game</a>
+</nav>
+<main>
+<!-- ═════════ STEP 1: BASICS ═════════ -->
+<section id="basics">
+<div class="sh"><span class="badge">STEP 1</span><h2>📖 NBA Basics — The Skeleton</h2></div>
+<div class="intro">Before memorising names, understand the game. 20 minutes here unlocks <em>everything</em> else.</div>
+<div class="card">
+  <h3>🏟️ What Is the NBA?</h3>
+  <p>The <strong>NBA (National Basketball Association)</strong> is the premier professional basketball league in the world. Founded in <strong>1946</strong>, it has <strong>30 teams</strong> split into <strong>Eastern</strong> and <strong>Western</strong> conferences.</p>
+</div>
+<div class="card">
+  <h3>🎯 How the Game Works</h3>
+  <table>
+    <thead><tr><th>Element</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Players per side</strong></td><td>5 on the court at a time (rosters ≈15)</td></tr>
+      <tr><td><strong>Game length</strong></td><td>4 quarters × 12 min = 48 min total</td></tr>
+      <tr><td><strong>Scoring</strong></td><td>2 pts inside arc · <strong>3 pts</strong> beyond arc · 1 pt free throw</td></tr>
+      <tr><td><strong>Overtime</strong></td><td>5-min OT period if tied at the end</td></tr>
+      <tr><td><strong>Shot clock</strong></td><td>Must attempt a shot within <strong>24 seconds</strong></td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="card">
+  <h3>📅 The Season Flow</h3>
+  <div class="flow">
+    <div class="fs"><div class="mo">Oct → Apr</div><div class="lb">🏀 Regular Season<br><small>82 games/team</small></div></div>
+    <div class="arr">→</div>
+    <div class="fs"><div class="mo">Apr → Jun</div><div class="lb">🔥 Playoffs<br><small>Top 8 each conf.</small></div></div>
+    <div class="arr">→</div>
+    <div class="fs"><div class="mo">June</div><div class="lb">🏆 NBA Finals<br><small>East vs. West</small></div></div>
+    <div class="arr">→</div>
+    <div class="fs"><div class="mo">🎉</div><div class="lb"><strong>Champion!</strong></div></div>
+  </div>
+  <p>Playoffs are <strong>best-of-7</strong> — first to 4 wins advances. This is when things get <em>intense</em>.</p>
+</div>
+<div class="card">
+  <h3>🔑 Key Terms</h3>
+  <table>
+    <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Ring</strong></td><td>Championship ring 💍 — the ultimate prize</td></tr>
+      <tr><td><strong>MVP</strong></td><td>Most Valuable Player (regular season award)</td></tr>
+      <tr><td><strong>Finals MVP</strong></td><td>MVP of the NBA Finals series</td></tr>
+      <tr><td><strong>GOAT</strong></td><td>Greatest Of All Time</td></tr>
+      <tr><td><strong>Triple-double</strong></td><td>10+ in three stats (pts, rebounds, assists) in one game</td></tr>
+      <tr><td><strong>Dunk</strong></td><td>Slam the ball forcefully down through the hoop</td></tr>
+      <tr><td><strong>Block / Steal</strong></td><td>Block = swat shot away · Steal = take the ball</td></tr>
+      <tr><td><strong>Point Guard (PG)</strong></td><td>The "quarterback" — runs plays &amp; makes passes</td></tr>
+      <tr><td><strong>Center (C)</strong></td><td>Tallest player, anchors the team near the basket</td></tr>
+      <tr><td><strong>Superteam</strong></td><td>When multiple superstars join the same team</td></tr>
+      <tr><td><strong>Draft</strong></td><td>Annual selection of new players from college/international</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="links">
+  <a href="https://www.youtube.com/results?search_query=nba+rules+explained+for+beginners" target="_blank">📺 Rules Explained (YouTube)</a>
+  <a href="https://www.nba.com" target="_blank">🌐 NBA Official</a>
+  <a href="https://www.nba.com/standings" target="_blank">📊 Live Standings</a>
+</div>
+</section>
+<!-- ═════════ STEP 2: STARS TODAY ═════════ -->
+<section id="stars">
+<div class="sh"><span class="badge">STEP 2</span><h2>⭐ Stars of TODAY</h2></div>
+<div class="intro">These are the players people are talking about <em>right now</em>. Learn these first — they come up in every NBA conversation.</div>
+<div class="card">
+  <h3>🃏 Nikola Jokić — "The Joker"</h3>
+  <div class="meta">Denver Nuggets · Center · Serbia</div>
+  <ul>
+    <li>Looks like an average guy but plays like an alien</li>
+    <li>Passes better than most guards — a <strong>3× MVP</strong></li>
+    <li>Led Denver to their <strong>first-ever championship in 2023</strong></li>
+    <li>Possibly the most skilled big man in basketball history</li>
+  </ul>
+  <div class="tp">Jokić doesn't look athletic at all, but he's been MVP three times. It's insane.</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=nikola+jokic+best+highlights" target="_blank">📺 Highlights</a>
+    <a href="https://www.nba.com/player/203999/nikola-jokic" target="_blank">🌐 NBA Profile</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🪄 Luka Dončić — "Luka Magic"</h3>
+  <div class="meta">Los Angeles Lakers · Point Guard · Slovenia</div>
+  <ul>
+    <li>Only 25 years old, already one of the best ever</li>
+    <li>Scores, passes, rebounds — does <em>everything</em></li>
+    <li>Famous for impossible buzzer-beater shots</li>
+    <li>Traded from Dallas to the Lakers in 2025 — a massive storyline</li>
+  </ul>
+  <div class="tp">Luka's buzzer beaters are insane — he hits shots no one else even attempts.</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=luka+doncic+best+highlights" target="_blank">📺 Highlights</a>
+    <a href="https://www.nba.com/player/1629029/luka-doncic" target="_blank">🌐 NBA Profile</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🦌 Giannis Antetokounmpo — "The Greek Freak"</h3>
+  <div class="meta">Milwaukee Bucks · Forward · Greece (Nigerian heritage)</div>
+  <ul>
+    <li><strong>2× MVP</strong>, <strong>2021 NBA Champion &amp; Finals MVP</strong></li>
+    <li>Came from extreme poverty in Athens — a true rags-to-riches story</li>
+    <li>One of the most athletic humans to ever play basketball</li>
+    <li>His brothers Thanasis, Alex &amp; Kostas also played in the NBA</li>
+  </ul>
+  <div class="tp">Giannis was selling watches on the street in Greece as a kid. Now he's a champion. That story gives me chills.</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=giannis+rags+to+riches+story" target="_blank">📺 His Story</a>
+    <a href="https://www.nba.com/player/203507/giannis-antetokounmpo" target="_blank">🌐 NBA Profile</a>
+  </div>
+</div>
+<div class="card">
+  <h3>👑 Shai Gilgeous-Alexander — "SGA"</h3>
+  <div class="meta">Oklahoma City Thunder · Guard · Canada</div>
+  <ul>
+    <li>Won the <strong>2025 NBA Championship</strong> with OKC</li>
+    <li>Smooth, effortless scorer — makes impossible shots look easy</li>
+    <li>Led the youngest team in the league to a title</li>
+    <li>Reigning <strong>NBA MVP (2025)</strong></li>
+  </ul>
+  <div class="tp">SGA is the quietest superstar — no drama, just buckets. And he won it all in 2025.</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=shai+gilgeous+alexander+highlights" target="_blank">📺 Highlights</a>
+    <a href="https://www.nba.com/player/1628983/shai-gilgeous-alexander" target="_blank">🌐 NBA Profile</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🍳 Stephen Curry — "Chef Curry"</h3>
+  <div class="meta">Golden State Warriors · Point Guard · USA</div>
+  <ul>
+    <li><strong>4× NBA Champion</strong>, <strong>2× MVP</strong> (one unanimous)</li>
+    <li>Changed the game — made the deep 3-pointer the dominant weapon</li>
+    <li>Holds the all-time record for 3-pointers made</li>
+    <li>Still elite in his late 30s</li>
+  </ul>
+  <div class="tp">Before Steph, nobody took 30-foot shots seriously. He literally changed how basketball is played.</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=stephen+curry+greatest+moments" target="_blank">📺 Greatest Moments</a>
+    <a href="https://www.nba.com/player/201939/stephen-curry" target="_blank">🌐 NBA Profile</a>
+  </div>
+</div>
+<div class="card">
+  <h3>👑 LeBron James — "The King"</h3>
+  <div class="meta">Los Angeles Lakers · Forward · USA</div>
+  <ul>
+    <li>The <strong>all-time leading scorer</strong> in NBA history</li>
+    <li><strong>4× Champion</strong> with 3 different teams</li>
+    <li>Still playing at age <strong>40</strong> — unprecedented longevity</li>
+    <li>One of two main GOAT candidates (vs. Jordan)</li>
+    <li>His son <strong>Bronny James</strong> also plays in the NBA</li>
+  </ul>
+  <div class="tp">LeBron is 40 years old and still playing at an All-Star level. What is he eating?!</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=lebron+james+career+retrospective" target="_blank">📺 Career Retrospective</a>
+    <a href="https://www.nba.com/player/2544/lebron-james" target="_blank">🌐 NBA Profile</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🛸 Victor Wembanyama — "Wemby"</h3>
+  <div class="meta">San Antonio Spurs · Center · France</div>
+  <ul>
+    <li>Only <strong>21 years old</strong> — the most hyped prospect in decades</li>
+    <li><strong>7 feet 4 inches</strong> tall with an <strong>8-foot wingspan</strong></li>
+    <li>Can shoot 3s, block shots, and dribble like a guard</li>
+    <li>Called <em>"an alien"</em> by LeBron James himself · <strong>2024 Rookie of the Year</strong></li>
+  </ul>
+  <div class="tp">Wemby is 7'4" and can dribble past defenders. He's supposed to be the face of the NBA for the next 15 years.</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=victor+wembanyama+highlights" target="_blank">📺 Highlights</a>
+    <a href="https://www.nba.com/player/1641705/victor-wembanyama" target="_blank">🌐 NBA Profile</a>
+  </div>
+</div>
+<div class="links" style="margin-top:8px;">
+  <a href="https://www.youtube.com/@NBA" target="_blank">📺 NBA YouTube</a>
+  <a href="https://www.youtube.com/@HouseofHighlights" target="_blank">📺 House of Highlights</a>
+  <a href="https://podcasts.apple.com/us/podcast/the-old-man-the-three/id1483638669" target="_blank">🎙️ Old Man &amp; The Three Podcast</a>
+</div>
+</section>
+<!-- ═════════ STEP 3: LEGENDS ═════════ -->
+<section id="legends">
+<div class="sh"><span class="badge">STEP 3</span><h2>🏛️ All-Time Legends</h2></div>
+<div class="intro">These names defined entire eras of basketball. Knowing them gives you instant credibility in any NBA conversation.</div>
+<div class="card" style="border-color:#c9960c;">
+  <h3>🐐 The GOAT Debate: Jordan vs. LeBron</h3>
+  <p style="margin-bottom:12px;">This is the <strong>most debated topic in all of sports</strong>. You will hear it constantly.</p>
+  <table>
+    <thead><tr><th></th><th>Michael Jordan</th><th>LeBron James</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Championships</strong></td><td>6</td><td>4</td></tr>
+      <tr><td><strong>Finals Record</strong></td><td>6-0 (never lost)</td><td>4-6</td></tr>
+      <tr><td><strong>MVPs</strong></td><td>5</td><td>4</td></tr>
+      <tr><td><strong>All-time scoring</strong></td><td>5th</td><td><strong>1st (all-time leader)</strong></td></tr>
+      <tr><td><strong>GOAT argument</strong></td><td>Perfect Finals record, peak dominance</td><td>Longevity, brilliance across 3 teams</td></tr>
+    </tbody>
+  </table>
+  <div class="tp">"Are you Team Jordan or Team LeBron?" — this one question starts 30-minute conversations.</div>
+</div>
+<div class="card">
+  <h3>🐐 Michael Jordan — "MJ" / "Air Jordan"</h3>
+  <div class="meta">Chicago Bulls · Era: 1984–2003</div>
+  <ul>
+    <li><strong>6 Championships, 6 Finals MVPs, 5 Regular Season MVPs</strong> — never lost in the Finals (6-0)</li>
+    <li>The <strong>Air Jordan Nike brand</strong> is now worth billions</li>
+    <li>Subject of <strong>"The Last Dance" (2020)</strong> on Netflix — 10 episodes, addictive even for non-fans</li>
+    <li>Defined the 1990s; his Bulls dominated the entire decade</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=the+last+dance+netflix+trailer" target="_blank">🎬 The Last Dance Trailer</a>
+    <a href="https://www.youtube.com/results?search_query=michael+jordan+top+50+plays" target="_blank">📺 MJ's Top 50 Plays</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🐍 Kobe Bryant — "The Black Mamba"</h3>
+  <div class="meta">Los Angeles Lakers (entire career) · Era: 1996–2016</div>
+  <ul>
+    <li><strong>5 Championships</strong>, scored <strong>81 points in a single game</strong> (2nd highest ever)</li>
+    <li>Famous for <strong>"Mamba Mentality"</strong> — obsessive, relentless work ethic</li>
+    <li>Tragically died in a helicopter crash in <strong>January 2020</strong> with his daughter Gianna — a day the whole world mourned</li>
+    <li>Both jersey numbers <strong>#8 and #24</strong> are retired by the Lakers</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=kobe+81+point+game" target="_blank">📺 Kobe's 81-Point Game</a>
+    <a href="https://www.youtube.com/results?search_query=kobe+hall+of+fame+speech+2020" target="_blank">📺 Hall of Fame Speech</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🌟 Magic Johnson vs. Larry Bird</h3>
+  <div class="meta">LA Lakers (Magic) vs. Boston Celtics (Bird) · Era: 1980s</div>
+  <ul>
+    <li>Their rivalry <strong>literally saved the NBA</strong> — the league was failing until they arrived</li>
+    <li><strong>Magic</strong>: 5 championships, flashy passes, 6'9" point guard</li>
+    <li><strong>Bird</strong>: 3 championships, deadly shooter, legendary trash-talker</li>
+    <li>Bitter rivals who became best friends — the ultimate sports story</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=magic+vs+bird+rivalry+documentary" target="_blank">📺 Rivalry Documentary</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🏆 Kareem Abdul-Jabbar</h3>
+  <div class="meta">Milwaukee Bucks → LA Lakers · Era: 1969–1989</div>
+  <ul>
+    <li><strong>6 Championships, 6 MVP Awards</strong> (most ever)</li>
+    <li>Held the all-time scoring record for <strong>37 years</strong> (LeBron broke it in 2023)</li>
+    <li>Invented the unstoppable <strong>"skyhook"</strong> shot</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=kareem+skyhook+compilation" target="_blank">📺 Skyhook Compilation</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🏆🏆🏆 Bill Russell</h3>
+  <div class="meta">Boston Celtics · Era: 1956–1969</div>
+  <ul>
+    <li><strong>11 Championships in 13 years</strong> — the most dominant winning record in sports history</li>
+    <li>Defensive genius and civil rights activist</li>
+    <li>The <strong>NBA Finals MVP trophy is named after him</strong></li>
+  </ul>
+  <div class="tp">Bill Russell won 11 championships. For context, Michael Jordan won 6.</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=bill+russell+legacy+nba" target="_blank">📺 His Legacy</a>
+  </div>
+</div>
+<div class="card">
+  <h3>💯 Wilt Chamberlain</h3>
+  <div class="meta">Era: 1959–1973</div>
+  <ul>
+    <li>Scored <strong>100 points in a single game</strong> on March 2, 1962 — never matched since</li>
+    <li>Averaged <strong>50.4 points per game</strong> for an entire season</li>
+    <li>The NBA literally changed its rules to try to stop him</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=wilt+chamberlain+100+point+game" target="_blank">📺 The 100-Point Story</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🌋 Shaquille O'Neal — "Shaq"</h3>
+  <div class="meta">Magic → Lakers → Heat · Era: 1992–2011</div>
+  <ul>
+    <li><strong>4× Champion</strong>, 3× Finals MVP — one of the most physically dominant players ever</li>
+    <li>Now one of the most entertaining TV analysts on <em>Inside the NBA</em></li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=shaq+most+dominant+plays" target="_blank">📺 Most Dominant Plays</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🏗️ Tim Duncan — "The Big Fundamental"</h3>
+  <div class="meta">San Antonio Spurs (entire career) · Era: 1997–2016</div>
+  <ul>
+    <li><strong>5 Championships</strong>, 3× Finals MVP — stayed loyal to one team his whole career</li>
+    <li>Known for being "boring" in the best way — no flash, just perfect execution</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=tim+duncan+greatest+plays" target="_blank">📺 Greatest Plays</a>
+  </div>
+</div>
+<div class="card">
+  <h3>📊 Championship Ring Count</h3>
+  <div class="rrow"><div class="rn">Bill Russell</div><div class="rbw"><div class="rb" style="width:100%">11</div></div></div>
+  <div class="rrow"><div class="rn">Kareem Abdul-Jabbar</div><div class="rbw"><div class="rb" style="width:54.5%">6</div></div></div>
+  <div class="rrow"><div class="rn">Michael Jordan</div><div class="rbw"><div class="rb" style="width:54.5%">6</div></div></div>
+  <div class="rrow"><div class="rn">Kobe Bryant</div><div class="rbw"><div class="rb" style="width:45.5%">5</div></div></div>
+  <div class="rrow"><div class="rn">Tim Duncan</div><div class="rbw"><div class="rb" style="width:45.5%">5</div></div></div>
+  <div class="rrow"><div class="rn">Magic Johnson</div><div class="rbw"><div class="rb" style="width:45.5%">5</div></div></div>
+  <div class="rrow"><div class="rn">Stephen Curry</div><div class="rbw"><div class="rb" style="width:36.4%">4</div></div></div>
+  <div class="rrow"><div class="rn">LeBron James</div><div class="rbw"><div class="rb" style="width:36.4%">4</div></div></div>
+  <div class="rrow"><div class="rn">Shaquille O'Neal</div><div class="rbw"><div class="rb" style="width:36.4%">4</div></div></div>
+  <div class="rrow"><div class="rn">Larry Bird</div><div class="rbw"><div class="rb" style="width:27.3%">3</div></div></div>
+</div>
+<div class="card">
+  <h3>🎬 Must-Watch Documentaries</h3>
+  <table>
+    <thead><tr><th>Title</th><th>Platform</th><th>About</th></tr></thead>
+    <tbody>
+      <tr><td><strong>The Last Dance</strong></td><td>Netflix</td><td>Jordan's last Bulls championship run</td></tr>
+      <tr><td><strong>Winning Time</strong></td><td>HBO / Max</td><td>The 1980s Lakers dynasty</td></tr>
+      <tr><td><strong>Magic &amp; Bird: A Courtship of Rivals</strong></td><td>YouTube / HBO</td><td>Their legendary rivalry</td></tr>
+      <tr><td><strong>Kobe Bryant's Muse</strong></td><td>Showtime</td><td>Kobe's mindset and life</td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+<!-- ═════════ STEP 4: GREAT MOMENTS ═════════ -->
+<section id="moments">
+<div class="sh"><span class="badge">STEP 4</span><h2>🎬 Great Moments &amp; Stories</h2></div>
+<div class="intro">These are the iconic plays and storylines every NBA fan knows. Drop any one of these in a conversation and people will be impressed.</div>
+<div class="card">
+  <h3>⚡ Tracy McGrady — 13 Points in 33 Seconds (Dec 9, 2004)</h3>
+  <ul>
+    <li>Houston Rockets vs. San Antonio Spurs — Rockets down <strong>8 points with only 35 seconds left</strong></li>
+    <li>T-Mac hit three straight 3-pointers + a 4-point play (3-pointer while being fouled)</li>
+    <li>Final score: Rockets win by <strong>1</strong> — the comeback seemed physically impossible</li>
+    <li>Even the Spurs players stood in disbelief on the court</li>
+  </ul>
+  <div class="tp">You have to watch this one. Down 8 with 35 seconds left is considered mathematically over. T-Mac didn't get the memo.</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=tracy+mcgrady+13+points+33+seconds" target="_blank">📺 Watch It</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🐍 Kobe Bryant — 81 Points (Jan 22, 2006)</h3>
+  <ul>
+    <li>Lakers vs. Toronto Raptors — Kobe went unconscious in the second half</li>
+    <li>Scored <strong>55 points just in the second half</strong></li>
+    <li>Fans in the stands literally couldn't believe what they were watching</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=kobe+81+points+full+highlights" target="_blank">📺 Full Highlights</a>
+  </div>
+</div>
+<div class="card">
+  <h3>👑 LeBron James — "The Block" (2016 Finals, Game 7)</h3>
+  <ul>
+    <li>Finals tied 3-3, final minute of a tied Game 7</li>
+    <li>LeBron chased down Andre Iguodala from behind and <strong>swatted his layup off the backboard</strong></li>
+    <li>Cleveland went on to win — ending a <strong>52-year championship drought</strong> for the city</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=lebron+james+chase+down+block+2016" target="_blank">📺 Watch The Block</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🤒 Michael Jordan — "The Flu Game" (1997 Finals, Game 5)</h3>
+  <ul>
+    <li>Jordan played with severe flu / food poisoning — could barely stand before tip-off</li>
+    <li>Scored <strong>38 points</strong>, hit the go-ahead 3-pointer, collapsed into Scottie Pippen's arms after</li>
+    <li>One of sports' greatest "playing through adversity" moments</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=michael+jordan+flu+game+1997" target="_blank">📺 Full Story</a>
+  </div>
+</div>
+<div class="card">
+  <h3>👟 Jordan's "The Shot" (1989 Playoffs)</h3>
+  <ul>
+    <li>Cleveland Cavaliers vs. Chicago Bulls — do-or-die game</li>
+    <li>Jordan catches a pass, dribbles once, hits a <strong>buzzer-beater over Craig Ehlo</strong></li>
+    <li>Craig Ehlo's heartbreak reaction is almost as famous as the shot itself</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=michael+jordan+the+shot+1989+buzzer+beater" target="_blank">📺 Watch The Shot</a>
+  </div>
+</div>
+<div class="card">
+  <h3>💔 73-Win Warriors &amp; The 3-1 Comeback (2016)</h3>
+  <ul>
+    <li>Golden State Warriors went <strong>73-9</strong> — the best regular season ever</li>
+    <li>In the Finals they led Cleveland <strong>3-1</strong> — one win away from the title</li>
+    <li><strong>LeBron James led a historic comeback</strong>, winning 3 straight to claim the title</li>
+    <li>The 3-1 lead meme was born here 🙃</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=2016+nba+finals+game+7+highlights" target="_blank">📺 Game 7 Highlights</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🏙️ Cleveland's Championship (2016) — 52 Years in the Making</h3>
+  <ul>
+    <li>Cleveland had not won a major sports championship since <strong>1964</strong></li>
+    <li>LeBron, who grew up in nearby Akron, Ohio, <em>promised</em> the city a title when he returned in 2014</li>
+    <li>He delivered — after trailing 3-1 to the best regular-season team in history</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=cleveland+cavaliers+2016+championship+celebration" target="_blank">📺 Championship Celebration</a>
+  </div>
+</div>
+<div class="card" style="border-color:#3a7bd5;">
+  <h3>🗽 "The Hand of OG" — Knicks End 53-Year Drought (2026 Finals, Game 4)</h3>
+  <ul>
+    <li>New York Knicks vs. San Antonio Spurs at <strong>Madison Square Garden</strong></li>
+    <li>By the 3rd quarter the Knicks were down <strong>29 points</strong> (81–52) — everyone thought it was over</li>
+    <li>Jalen Brunson (36 pts) &amp; OG Anunoby (33 pts) went on a <strong>58-30 second-half rampage</strong></li>
+    <li>With <strong>1.2 seconds left</strong>, Brunson fired a desperate 3-pointer — it bounced off the front rim</li>
+    <li>OG Anunoby stretched his right hand out and <strong>tipped it in</strong> — Knicks win 107–106. MSG exploded.</li>
+    <li>Nicknamed <strong>"The Hand of OG"</strong> — a nod to Maradona's "Hand of God" goal in the 1986 World Cup</li>
+    <li>Knicks won the title in Game 5 — <strong>first championship since 1973</strong>, ending a 53-year drought</li>
+  </ul>
+  <div class="tp">The Knicks were down 29 at home in the Finals. Then OG tips it in with one second left. Madison Square Garden went absolutely insane — it's the greatest comeback in Finals history.</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=OG+Anunoby+tip+in+knicks+29+point+comeback+finals+2026" target="_blank">📺 The Hand of OG</a>
+    <a href="https://www.youtube.com/results?search_query=madison+square+garden+knicks+game+4+finals+celebration+2026" target="_blank">📺 MSG Erupts</a>
+  </div>
+</div>
+<div class="card">
+  <h3>😤 "The Decision" — LeBron Leaves Cleveland (2010)</h3>
+  <ul>
+    <li>LeBron held a <strong>live TV special</strong> to announce he was leaving Cleveland for Miami</li>
+    <li>Cleveland fans burned his jersey in the streets — the city was devastated</li>
+    <li>He won 2 titles with Miami (2012, 2013), then returned to Cleveland and won in 2016 — the ultimate redemption arc</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=lebron+james+the+decision+2010" target="_blank">📺 The Decision</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🔊 "The Malice at the Palace" (2004) — The Brawl</h3>
+  <ul>
+    <li>Indiana Pacers vs. Detroit Pistons — a brawl <strong>between players AND fans in the stands</strong></li>
+    <li>Ron Artest went into the crowd after a fan threw a cup at him</li>
+    <li>Multiple players suspended; changed NBA security forever</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=malice+at+the+palace+full+video" target="_blank">📺 Full Video</a>
+  </div>
+</div>
+<div class="card">
+  <h3>👟 Kobe's Final Game — 60 Points (April 13, 2016)</h3>
+  <ul>
+    <li>Last game of his 20-year career, age 37, against Utah Jazz</li>
+    <li>Scored <strong>60 points</strong> — a storybook ending</li>
+    <li>The arena chanted "Kobe! Kobe!" as he walked off for the last time</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=kobe+bryant+final+game+60+points" target="_blank">📺 Final Game Highlights</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🗣️ Instant Conversation Starters</h3>
+  <ul>
+    <li><em>"T-Mac scored 13 points in 33 seconds. Down 8 with half a minute left — that's supposed to be impossible."</em></li>
+    <li><em>"The Warriors had the best regular season ever but still blew a 3-1 lead."</em></li>
+    <li><em>"Jordan played the entire Flu Game barely able to stand — and still dropped 38."</em></li>
+    <li><em>"Kobe's last game, he was 37 and scored 60. It's like a movie ending."</em></li>
+    <li><em>"The Knicks were down 29 and OG tipped it in with one second left. Madison Square Garden went insane."</em></li>
+  </ul>
+</div>
+</section>
+<!-- ═════════ STEP 5: NO RING LEGENDS ═════════ -->
+<section id="noring">
+<div class="sh"><span class="badge">STEP 5</span><h2>💔 Legends Who Never Won a Ring</h2></div>
+<div class="intro">In the NBA, a "ring" defines legacies. These are elite players who had everything — talent, MVP awards, fame — but were denied the ultimate prize. Great conversation topic. 🗣️</div>
+<div class="card">
+  <h3>🗣️ Charles Barkley — "The Round Mound of Rebound"</h3>
+  <div class="meta">Era: 1984–2000 · Best Team: Phoenix Suns</div>
+  <ul>
+    <li><strong>1× MVP (1993)</strong>, 11× All-Star — 1993 Suns reached the Finals, lost to Jordan's Bulls</li>
+    <li>Now one of the funniest TV analysts in sports on <em>Inside the NBA</em></li>
+    <li>Famous quote: <em>"I am not a role model."</em></li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=charles+barkley+greatest+plays+highlights" target="_blank">📺 Greatest Plays</a>
+    <a href="https://www.youtube.com/results?search_query=charles+barkley+funniest+inside+the+nba+moments" target="_blank">📺 Funniest TV Moments</a>
+  </div>
+</div>
+<div class="card">
+  <h3>📬 Karl Malone — "The Mailman"</h3>
+  <div class="meta">Era: 1985–2004 · Best Team: Utah Jazz</div>
+  <ul>
+    <li><strong>2× MVP</strong> — reached the Finals <strong>twice (1997, 1998)</strong> alongside John Stockton</li>
+    <li>Both times eliminated by <strong>Michael Jordan's Bulls</strong></li>
+    <li>Tried one last time with the Lakers at age 40 in 2004 — lost to Detroit</li>
+  </ul>
+  <div class="tp">The Mailman always delivered — except when it mattered most. Jordan stopped him twice.</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=karl+malone+greatest+moments" target="_blank">📺 Greatest Moments</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🎯 John Stockton</h3>
+  <div class="meta">Era: 1984–2003 · Utah Jazz (entire career)</div>
+  <ul>
+    <li><strong>All-time leader in BOTH assists AND steals</strong> — both records still stand</li>
+    <li>Unstoppable pick-and-roll with Karl Malone</li>
+    <li>Reached the Finals twice (1997, 1998) — both times stopped by Jordan</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=john+stockton+greatest+assists" target="_blank">📺 Greatest Assists</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🔥 Allen Iverson — "AI" / "The Answer"</h3>
+  <div class="meta">Era: 1996–2010 · Best Team: Philadelphia 76ers</div>
+  <ul>
+    <li><strong>1× MVP (2001)</strong>, 4× scoring champion — only <strong>6 feet tall</strong> in a giant's league</li>
+    <li>In 2001, nearly single-handedly carried the Sixers to the Finals — lost to Shaq &amp; Kobe</li>
+    <li>Cultural icon: changed NBA fashion with cornrows and tattoos</li>
+    <li>His "Practice" press conference is one of the most iconic media moments ever</li>
+  </ul>
+  <div class="tp">Iverson was 6 feet tall and won NBA MVP. The heart of a lion — no ring though.</div>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=allen+iverson+greatest+crossovers" target="_blank">📺 Greatest Crossovers</a>
+    <a href="https://www.youtube.com/results?search_query=allen+iverson+practice+press+conference" target="_blank">📺 "Practice" Press Conference</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🗽 Patrick Ewing</h3>
+  <div class="meta">Era: 1985–2002 · Best Team: New York Knicks</div>
+  <ul>
+    <li>Dominant center — the greatest Knick ever</li>
+    <li>Reached the <strong>1994 Finals</strong> — lost to Hakeem Olajuwon's Rockets</li>
+    <li>Also repeatedly eliminated by Jordan's Bulls</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=patrick+ewing+greatest+plays+knicks" target="_blank">📺 Greatest Plays</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🎩 Steve Nash</h3>
+  <div class="meta">Era: 1996–2014 · Best Team: Phoenix Suns</div>
+  <ul>
+    <li><strong>2× MVP (2005, 2006)</strong> — revolutionised the game with fast-paced, pass-first basketball</li>
+    <li>His Suns were wildly entertaining but faced bad luck &amp; controversial officiating in the playoffs</li>
+    <li>Never reached the Finals — one of sports' great "what ifs"</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=steve+nash+greatest+moments+suns" target="_blank">📺 Greatest Moments</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🎯 Reggie Miller — "The Assassin"</h3>
+  <div class="meta">Era: 1987–2005 · Indiana Pacers (entire career)</div>
+  <ul>
+    <li>Nemesis of the New York Knicks — scored <strong>8 points in 8.9 seconds</strong> vs. them in 1995</li>
+    <li>Reached the <strong>2000 Finals</strong> — lost to Shaq and Kobe's Lakers</li>
+    <li>One of the greatest clutch shooters ever — no ring</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=reggie+miller+8+points+8+seconds+knicks" target="_blank">📺 8 Points in 8.9 Seconds</a>
+  </div>
+</div>
+<div class="card">
+  <h3>🧠 Chris Paul — "The Point God"</h3>
+  <div class="meta">Era: 2005–present · Various Teams</div>
+  <ul>
+    <li>12× All-Star — elite passing, defence, and basketball IQ</li>
+    <li>Closest moment: 2021 Suns in the Finals — lost to Giannis's Bucks</li>
+    <li>Still active and chasing a ring</li>
+  </ul>
+  <div class="links">
+    <a href="https://www.youtube.com/results?search_query=chris+paul+greatest+plays+career" target="_blank">📺 Greatest Plays</a>
+  </div>
+</div>
+<div class="card" style="border-color:#e63946;">
+  <h3>🩸 The Common Thread: Michael Jordan</h3>
+  <table>
+    <thead><tr><th>Player</th><th>Eliminated by Jordan?</th></tr></thead>
+    <tbody>
+      <tr><td>Karl Malone</td><td>✅ Twice — 1997 &amp; 1998 Finals</td></tr>
+      <tr><td>John Stockton</td><td>✅ Twice — 1997 &amp; 1998 Finals</td></tr>
+      <tr><td>Charles Barkley</td><td>✅ 1993 Finals</td></tr>
+      <tr><td>Patrick Ewing</td><td>✅ Multiple playoff exits</td></tr>
+      <tr><td>Reggie Miller</td><td>✅ Multiple playoff series</td></tr>
+      <tr><td>Clyde Drexler</td><td>✅ 1992 Finals</td></tr>
+    </tbody>
+  </table>
+  <div class="tp">Jordan didn't just win championships. He DENIED an entire generation of Hall of Famers their rings. That's part of his GOAT case.</div>
+</div>
+<div class="links" style="margin-top:8px;">
+  <a href="https://www.youtube.com/results?search_query=top+10+nba+players+without+championship+rings" target="_blank">📺 Top 10 Players Without Rings</a>
+  <a href="https://www.basketball-reference.com" target="_blank">📖 Basketball Reference</a>
+</div>
+</section>
+<!-- ═════════ STEP 6: WATCH A GAME ═════════ -->
+<section id="watch">
+<div class="sh"><span class="badge">STEP 6</span><h2>🍿 Watch a Game Together!</h2></div>
+<div class="intro">You've done the reading. Now it's time for the real thing — watching an actual NBA game. This is where everything clicks. Way more fun with someone who can explain things live. 😄</div>
+<div class="card">
+  <h3>🎯 Before You Watch — Focus on Just 3 Things</h3>
+  <ul>
+    <li><strong>Who's the star player</strong> to watch on each team?</li>
+    <li><strong>What's the score</strong> and which team are you rooting for?</li>
+    <li><strong>Did anything surprising happen?</strong> (a dunk, a buzzer beater, a foul)</li>
+  </ul>
+  <p style="margin-top:10px;">That's it. The rest comes naturally over time.</p>
+</div>
+<div class="card">
+  <h3>📺 Where to Watch</h3>
+  <table>
+    <thead><tr><th>Platform</th><th>What It Offers</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://www.nba.com/league-pass" target="_blank" style="color:#7eb8f7;"><strong>NBA League Pass</strong></a></td><td>Every game, live &amp; on demand</td></tr>
+      <tr><td><a href="https://www.espn.com" target="_blank" style="color:#7eb8f7;"><strong>ESPN / ABC</strong></a></td><td>National TV games (biggest matchups)</td></tr>
+      <tr><td><a href="https://www.max.com" target="_blank" style="color:#7eb8f7;"><strong>TNT / Max</strong></a></td><td>National TV games + Inside the NBA</td></tr>
+      <tr><td><a href="https://www.nba.com/watch" target="_blank" style="color:#7eb8f7;"><strong>NBA App</strong></a></td><td>Highlights, scores, some free games</td></tr>
+      <tr><td><a href="https://www.youtube.com/@NBA" target="_blank" style="color:#7eb8f7;"><strong>YouTube (@NBA)</strong></a></td><td>Free highlights &amp; classic games</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="card">
+  <h3>🕹️ What to Say During the Game</h3>
+  <table>
+    <thead><tr><th>Play</th><th>What to Say</th></tr></thead>
+    <tbody>
+      <tr><td>A big dunk</td><td><em>"Did you see that?! He had no business doing that!"</em></td></tr>
+      <tr><td>A deep 3-pointer</td><td><em>"That was way behind the line — how is that even possible?"</em></td></tr>
+      <tr><td>A no-look pass</td><td><em>"He didn't even look! How did he know his teammate was there?"</em></td></tr>
+      <tr><td>A chase-down block</td><td><em>"He came from nowhere to block that!"</em></td></tr>
+      <tr><td>A buzzer beater</td><td>🤯 (no words needed — just scream)</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="card">
+  <h3>📋 Phone Cheat Sheet — Screenshot This!</h3>
+  <div class="cs">
+    <div><span class="lbl">SCORING  :</span> 2 pts (normal) &middot; 3 pts (behind arc) &middot; 1 pt (free throw)</div>
+    <div><span class="lbl">QUARTERS :</span> 4 &times; 12 min | Overtime: 5 min periods</div>
+    <div><span class="lbl">PLAYOFFS :</span> Best of 7 — first to 4 wins advances</div>
+    <div><span class="lbl">GOAT     :</span> Jordan (6 rings, perfect Finals) vs. LeBron (all-time scorer)</div>
+    <div><span class="lbl">MVP 2025 :</span> SGA — OKC Thunder, 2025 champion</div>
+    <div><span class="lbl">THE ALIEN:</span> Victor Wembanyama — 7'4", 21 yrs old, the future</div>
+    <div><span class="lbl">NO RINGS :</span> Barkley, Malone, Stockton, Iverson, CP3 — thanks Jordan 😤</div>
+    <div><span class="lbl">NYC MAGIC:</span> "Hand of OG" — Knicks down 29, OG tips it in, 1.2s left 🗽</div>
+  </div>
+</div>
+<div class="card">
+  <h3>🎬 Warm-Up Videos (watch before the game)</h3>
+  <table>
+    <thead><tr><th>Video</th><th>Why Watch It</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://www.youtube.com/results?search_query=nba+best+plays+2024+2025+season" target="_blank" style="color:#7eb8f7;">NBA Best Plays 2024-25</a></td><td>See today's stars in action</td></tr>
+      <tr><td><a href="https://www.youtube.com/results?search_query=stephen+curry+greatest+3+pointers+compilation" target="_blank" style="color:#7eb8f7;">Steph Curry's Greatest 3s</a></td><td>Understand the 3-point revolution</td></tr>
+      <tr><td><a href="https://www.youtube.com/results?search_query=nikola+jokic+best+passes+compilation" target="_blank" style="color:#7eb8f7;">Jokic's Best Passes</a></td><td>Appreciate his bizarre genius</td></tr>
+      <tr><td><a href="https://www.youtube.com/results?search_query=lebron+james+top+10+career+plays" target="_blank" style="color:#7eb8f7;">LeBron's Top 10 Career Plays</a></td><td>The range of his greatness</td></tr>
+      <tr><td><a href="https://www.youtube.com/results?search_query=tracy+mcgrady+13+points+33+seconds" target="_blank" style="color:#7eb8f7;">T-Mac: 13 Points in 33 Seconds</a></td><td>Most insane clutch moment ever</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="congrats">
+  <h2>🏆 You Made It, Eunice!</h2>
+  <p class="sub2">After going through all 6 steps, you now know:</p>
+  <ul class="ck">
+    <li>How the game and league work</li>
+    <li>The current superstars everyone is talking about</li>
+    <li>The all-time legends and the GOAT debate</li>
+    <li>The iconic moments and stories</li>
+    <li>The heartbreaking ringless legends</li>
+    <li>How to watch and enjoy a live game</li>
+  </ul>
+  <p style="margin-top:24px;font-style:italic;color:#F7941D;">"The game is simple — it's just not easy." — Phil Jackson (11× Champion Coach)</p>
+</div>
+</section>
+</main>
+</body>
+</html>
