@@ -50,6 +50,9 @@ tbody td strong{color:#fff;}
 .fs .lb{font-size:.85rem;font-weight:600;margin-top:4px;}
 .arr{color:var(--or);font-size:1.3rem;}
 .rrow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd);}
+.rrow-hl{background:rgba(247,148,29,.08);border-left:3px solid var(--or);padding-left:8px;border-radius:0 6px 6px 0;}
+.rrow-hl .rn{color:#ffd080;font-weight:800;}
+.era-badge{font-size:.62rem;background:var(--or);color:#000;border-radius:10px;padding:1px 6px;margin-left:6px;font-weight:700;vertical-align:middle;white-space:nowrap;}
 .rn{width:175px;font-weight:600;font-size:.85rem;flex-shrink:0;}
 .rbw{flex:1;background:rgba(255,255,255,.05);border-radius:4px;height:17px;overflow:hidden;}
 .rb{height:100%;background:linear-gradient(90deg,var(--or),#f7c06d);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;font-size:.7rem;font-weight:700;color:#000;}
@@ -397,14 +400,18 @@ hr{border:none;border-top:1px solid var(--bd);margin:28px 0;}
   <h3>📊 Championship Ring Count</h3>
   <div class="rrow"><div class="rn">Bill Russell</div><div class="rbw"><div class="rb" style="width:100%">11</div></div></div>
   <div class="rrow"><div class="rn">Kareem Abdul-Jabbar</div><div class="rbw"><div class="rb" style="width:54.5%">6</div></div></div>
-  <div class="rrow"><div class="rn">Michael Jordan</div><div class="rbw"><div class="rb" style="width:54.5%">6</div></div></div>
-  <div class="rrow"><div class="rn">Kobe Bryant</div><div class="rbw"><div class="rb" style="width:45.5%">5</div></div></div>
-  <div class="rrow"><div class="rn">Tim Duncan</div><div class="rbw"><div class="rb" style="width:45.5%">5</div></div></div>
+  <div class="rrow rrow-hl"><div class="rn">Michael Jordan <span class="era-badge">post-2000</span></div><div class="rbw"><div class="rb" style="width:54.5%">6</div></div></div>
+  <div class="rrow rrow-hl"><div class="rn">Kobe Bryant <span class="era-badge">post-2000</span></div><div class="rbw"><div class="rb" style="width:45.5%">5</div></div></div>
+  <div class="rrow rrow-hl"><div class="rn">Tim Duncan <span class="era-badge">post-2000</span></div><div class="rbw"><div class="rb" style="width:45.5%">5</div></div></div>
   <div class="rrow"><div class="rn">Magic Johnson</div><div class="rbw"><div class="rb" style="width:45.5%">5</div></div></div>
-  <div class="rrow"><div class="rn">Stephen Curry</div><div class="rbw"><div class="rb" style="width:36.4%">4</div></div></div>
-  <div class="rrow"><div class="rn">LeBron James</div><div class="rbw"><div class="rb" style="width:36.4%">4</div></div></div>
-  <div class="rrow"><div class="rn">Shaquille O'Neal</div><div class="rbw"><div class="rb" style="width:36.4%">4</div></div></div>
+  <div class="rrow rrow-hl"><div class="rn">Stephen Curry <span class="era-badge">post-2000</span></div><div class="rbw"><div class="rb" style="width:36.4%">4</div></div></div>
+  <div class="rrow rrow-hl"><div class="rn">LeBron James <span class="era-badge">post-2000</span></div><div class="rbw"><div class="rb" style="width:36.4%">4</div></div></div>
+  <div class="rrow rrow-hl"><div class="rn">Shaquille O'Neal <span class="era-badge">post-2000</span></div><div class="rbw"><div class="rb" style="width:36.4%">4</div></div></div>
   <div class="rrow"><div class="rn">Larry Bird</div><div class="rbw"><div class="rb" style="width:27.3%">3</div></div></div>
+  <p style="margin-top:12px;font-size:.78rem;color:var(--mt);">
+    <span style="display:inline-block;width:10px;height:10px;background:rgba(247,148,29,.4);border-left:3px solid var(--or);margin-right:6px;border-radius:0 2px 2px 0;"></span>
+    <strong style="color:#ffd080;">Highlighted</strong> = played in the NBA after year 2000 (or Michael Jordan)
+  </p>
 </div>
 <div class="card">
   <h3>🎬 Must-Watch Documentaries</h3>
